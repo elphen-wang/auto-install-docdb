@@ -12,6 +12,7 @@ DocDB is a powerful and flexible collaborative document server, which was develo
  * [[https://github.com/brettviren/docdb-install][docdb-install]] is available under the terms of the GNU Public License (GPL), version 2.
 
  * [[https://github.com/ElonSteveWang/auto-install-docdb][auto-install-docdb]] is available under the terms of the GNU Public License (GPL), version 2.
+ * Here is a ref superlink for [[http://www.gnu.org/licenses/old-licenses/gpl-2.0.html][GNU General Public License, version 2]].
  
 * Environment
  * CentSO or Scientific Linux OS;
@@ -29,10 +30,18 @@ Here is an actual installation:
   # cd auto-install-docdb
   # sudo DOCDB_PROJECT_NAME="HEP" DOCDB_WEB_HOST="120.0.0.0" DOCDB_PORT="8888" DOCDB_WEB_ROOT="HEP" DOCDB_DB_ROOT_PASS="db_root_pass"  python ./install_docdb.py
   # less /var/lib/docdb/installation.json
-  Chrome/Firefox browser-> http://120.0.0.0:8888/cgi-bin/HEP/DocumentDatabase
+  Chrome/Firefox etc. browser -> http://120.0.0.0:8888/cgi-bin/HEP/DocumentDatabase
 #+END_EXAMPLE
 
+#+END_EXAMPLE
+ * I strong recommend that you input DocDB web host, web port, web root and the password of user =root= the database.
+ * As Mr. Brett Viren [[https://github.com/brettviren/docdb-install][pointed out]]: 
+    *  Read the script for the full set of possible parameters; 
+    *  When no configuration file is explicitly given to the script and no configuration file is found in the canonical location then a set of default values coded in the script will be used. In addition, these default values can be overridden by a corresponding environment variable which is named by prepending =DOCDB_= to the upper-case version of the parameter name.
+    *  There is no guarantee this package does not end up destroying all that you love and care about.
+
 * Common problems
+
 
 
 
