@@ -46,10 +46,11 @@ Here is an actual installation:
 
 * Common problems
   * Make sure your apache's httpd.conf and log paths are consistent with the script, otherwise enter the corresponding paths.
-  * If the installation is successful, but the access failed, please check the error log and look for solutions online.
+  * If the installation is successful, but the access failed, please check the error log and look for solutions via Google or Baidu.
   
   Here are some examples for introduct annoying questions 
-    * it reports =install_driver(mysql) failed: Can’t locate DBD/mysql.pm in @INC= 
+    * it reports =install_driver(mysql) failed: Can’t locate DBD/mysql.pm in @INC= ->  perl -MCPAN -e 'install DBD::mysql' . Please notice it contained single quotes instead of double quotes and "::" instead of "/".
+
 
 
 
