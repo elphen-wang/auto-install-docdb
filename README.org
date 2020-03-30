@@ -22,6 +22,8 @@ DocDB is a powerful and flexible collaborative document server, which was develo
  * Additional requirements refer to DocDB official notes.
  
 * Installation instructions
+Before you installation, please check the User and Group values in =httpd.conf=, default values both are =apache=. If not, your need to add =DOCDB_WEB_APACHE_USER=someone= and =DOCDB_WEB_APACHE_GROUP=somegroup= in the related bash commands of next instructions.
+
 Here is an actual installation:
 
 #+BEGIN_EXAMPLE
@@ -39,6 +41,7 @@ Here is an actual installation:
     *  Read the script for the full set of possible parameters; 
     *  When no configuration file is explicitly given to the script and no configuration file is found in the canonical location then a set of default values coded in the script will be used. In addition, these default values can be overridden by a corresponding environment variable which is named by prepending =DOCDB_= to the upper-case version of the parameter name.
     *  There is no guarantee this package does not end up destroying all that you love and care about.
+ * I used the DocDB installation package from a server in China by default in the =install_docdb.py= script for faster for faster clone. Overseas users can change the link to github by themselves, like https://github.com/brettviren/DocDB.git. As for the Official latest edition, you have to know its =CreateDatabase.SQL= sql is not supported by MySQL 5.x and more higher version and need to change "Username =text= NOT NULL default '' " to " Username =char(32)= NOT NULL default ''".
 
 * Common problems
 
