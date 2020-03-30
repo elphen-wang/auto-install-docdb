@@ -1,0 +1,44 @@
+Listen 8888
+<VirtualHost *:{web_port}>
+        ServerName {web_host}
+        DocumentRoot {file_root}
+        ServerAdmin {admin_email}
+        CustomLog "/var/log/httpd/{web_host}" combined
+        ErrorLog "/var/log/httpd/{web_host}-error"
+        LogLevel warn
+
+        ScriptAlias /{cgi_base}/ {script_root}/
+
+	Alias {web_base}/ {file_root}/
+        <Directory "{file_root}/">
+           Options ExecCGI FollowSymLinks
+           Order allow,deny
+           Allow from all
+           AuthType Basic
+           AuthName "{project_name}"
+           AuthUserFile  {auth_file}
+           <Limit GET POST>
+              require valid-user
+           </Limit>
+        </Directory>
+
+        <Directory "{script_root}/">
+           Options ExecCGI SymLinksIfOwnerMatch
+           Order allow,deny
+           Allow from all
+        </Directory>
+
+        <Directory "{script_root}/{web_root}">
+           Options ExecCGI FollowSymLinks
+           AuthType Basic
+           AuthName "{project_name}"
+           AuthUserFile  {auth_file}
+           <Limit GET POST>
+              require valid-user
+           </Limit>
+        </Directory>
+
+        TraceEnable off
+
+</VirtualHost>
+

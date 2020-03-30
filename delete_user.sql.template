@@ -1,0 +1,5 @@
+use mysql;
+delete from user where User='{db_admuser}';
+delete from user where User='{db_rouser}';
+delete from user where User='{db_rwuser}';
+FLUSH PRIVILEGES;
