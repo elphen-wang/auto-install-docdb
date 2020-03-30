@@ -62,7 +62,7 @@ Here is an actual installation:
     * service mysqld restart / stop / start
     * service httpd restart / stop / start
     * systemctl restart httpd
-    * perl DocumentDatabase   (check running statu in base)
+    * perl DocumentDatabase   (check running statu in bash)
     
     
 
