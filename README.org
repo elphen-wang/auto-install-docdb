@@ -49,7 +49,7 @@ Here is an actual installation:
   * If the installation is successful, but the access failed, please check the error log and look for solutions via Google or Baidu. Here is an examples for solve a annoying question:
     * it reports =install_driver(mysql) failed: Can’t locate DBD/mysql.pm in @INC= ->  perl -MCPAN -e 'install DBD::mysql' . Please notice it contained single quotes instead of double quotes and "::" instead of "/"   (For Apache server).
     
-  * useful commands:
+  * useful bash commands:
     * yum install mysql-server
     * pip install mysqlclient
     * yum -y install perl-DBD-MySQL
