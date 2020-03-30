@@ -1,6 +1,6 @@
 #+TITLE: auto-install-docdb
 Automated installation DocDB on CentOS/SLOS.
 
-# Introduction
+* Introduction
 
-DocDB is a powerful and flexible collaborative document server, which was developed for use by the BTeV collaboration at Fermilab and is now widely used in the scientific community.  
+DocDB is a powerful and flexible collaborative document server, which was developed for use by the BTeV collaboration at Fermilab and is now widely used in the scientific community. However its [[https://github.com/ericvaandering/DocDB][official installation instruction]] is too troublesome. To this end, [[https://github.com/brettviren][Mr. Brett Viren]] has proposed a [[https://github.com/brettviren/docdb-install]["docdb-install"]] package containing a Python script that can handle handles a bulk of the DocDB installation procedure. But there are three flies in the ointment: 1)his work is on Debian/Ubuntu, while  some people's server system is CentSO or Scientific Linux OS, they can hardly use =agt-get= ; 2)
