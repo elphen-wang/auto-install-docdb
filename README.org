@@ -31,7 +31,7 @@ Here is an actual installation:
   # git clone https://github.com/ElonSteveWang/auto-install-docdb.git
   # cd auto-install-docdb
   # sudo DOCDB_PROJECT_NAME="HEP" DOCDB_WEB_HOST="120.0.0.0" DOCDB_PORT="8888" DOCDB_WEB_ROOT="HEP" DOCDB_DB_ROOT_PASS="db_root_pass"  python ./install_docdb.py
-  # less /var/lib/docdb/installation.json
+  # less installation.json 
   Chrome/Firefox etc. browser -> http://120.0.0.0:8888/cgi-bin/HEP/DocumentDatabase
 #+END_EXAMPLE
 
@@ -39,13 +39,17 @@ Here is an actual installation:
  * I strong recommend that you input DocDB web host, web port, web root and the password of user =root= the database.
  * As Mr. Brett Viren [[https://github.com/brettviren/docdb-install][pointed out]]: 
     *  Read the script for the full set of possible parameters; 
+    * A file in JSON format will be produced to hold the parameters of the installation. Such a file can also be given to script to provide for the installation configuration. This file will contain passwords so protect it. Subsequent running will use the contents of this file to set the installation configuration parameters. 
     *  When no configuration file is explicitly given to the script and no configuration file is found in the canonical location then a set of default values coded in the script will be used. In addition, these default values can be overridden by a corresponding environment variable which is named by prepending =DOCDB_= to the upper-case version of the parameter name.
     *  There is no guarantee this package does not end up destroying all that you love and care about.
- * I used the DocDB installation package from a server in China by default in the =install_docdb.py= script for faster for faster clone. Overseas users can change the link to github by themselves, like https://github.com/brettviren/DocDB.git. As for the Official latest edition, you have to know its =CreateDatabase.SQL= sql is not supported by MySQL 5.x and more higher version and need to change "Username =text= NOT NULL default '' " to " Username =char(32)= NOT NULL default ''".
+ * I used the DocDB installation package from a server in China by default in the =install_docdb.py= script for faster for faster clone. Overseas users can change the link to github by themselves, like https://github.com/brettviren/DocDB.git. As for the Official latest edition, you have to know its =CreateDatabase.SQL= is not supported by MySQL 5.x and more higher version and need to change "Username =text= NOT NULL default '' " to " Username =char(32)= NOT NULL default ''". The default DocDB installation package adds the bootstrap CSS files, which are not available in the official version.
 
 * Common problems
-
-
+  * Make sure your apache's httpd.conf and log paths are consistent with the script, otherwise enter the corresponding paths.
+  * If the installation is successful, but the access failed, please check the error log and look for solutions online.
+  
+  Here are some examples for introduct annoying questions 
+    * it reports =install_driver(mysql) failed: Can’t locate DBD/mysql.pm in @INC= 
 
 
 
