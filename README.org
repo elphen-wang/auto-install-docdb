@@ -46,10 +46,25 @@ Here is an actual installation:
 
 * Common problems
   * Make sure your apache's httpd.conf and log paths are consistent with the script, otherwise enter the corresponding paths.
-  * If the installation is successful, but the access failed, please check the error log and look for solutions via Google or Baidu.
-  
-  Here are some examples for introduct annoying questions 
-    * it reports =install_driver(mysql) failed: Can’t locate DBD/mysql.pm in @INC= ->  perl -MCPAN -e 'install DBD::mysql' . Please notice it contained single quotes instead of double quotes and "::" instead of "/".
+  * If the installation is successful, but the access failed, please check the error log and look for solutions via Google or Baidu. Here is an examples for solve a annoying question:
+    * it reports =install_driver(mysql) failed: Can’t locate DBD/mysql.pm in @INC= ->  perl -MCPAN -e 'install DBD::mysql' . Please notice it contained single quotes instead of double quotes and "::" instead of "/"   (For Apache server).
+    
+  * useful commands:
+    * pip install mysqlclient
+    * yum install mysql-server
+    * yum -y install perl-DBD-MySQL
+    * yum -y install httpd-manual mod_ssl mod_perl mod_auth_mysql
+    * yum -y install mysql-connector-odbc mysql-devel libdbi-dbd-mysql
+    * perl -MCPAN -e 'install XML::Writer'
+    * perl -MCPAN -e 'install CPAN'
+    * perl -MCPAN -e 'install Benchmark'
+    * yum install "perl(DBD::mysql)"   (double quotes for bash)
+    * service mysqld restart / stop / start
+    * service httpd restart / stop / start
+    * systemctl restart httpd
+    * perl DocumentDatabase   (check running statu in base)
+    
+    
 
 
 
