@@ -36,7 +36,6 @@ Here is an actual installation:
   Chrome/Firefox etc. browser -> http://120.0.0.0:8888/cgi-bin/HEP/DocumentDatabase
 #+END_EXAMPLE
 
-#+END_EXAMPLE
  * I strong recommend that you input DocDB web host, web port, web root and the password of user =root= the database.
  * As Mr. Brett Viren [[https://github.com/brettviren/docdb-install][pointed out]]: 
     *  Read the script for the full set of possible parameters; 
